@@ -57,7 +57,7 @@ h1 {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    overflow: hidden; /* ¡Sigue siendo muy importante para que la línea no se salga! */
+    overflow: hidden; /* ¡Sigue siendo MUY importante para que la línea no se salga! */
 }
 
 .asignatura:last-child {
@@ -95,23 +95,23 @@ h1 {
 .asignatura.completed::before {
     content: '';
     position: absolute;
-    /* Ajustes para que cubra todo el ancho/alto de la pestaña */
-    top: 50%; /* Empezamos desde el centro para una mejor manipulación */
-    left: 0;
-    width: 200%; /* Aumentamos aún más el ancho para asegurar que cubra completamente la diagonal, sin importar el tamaño del texto */
+    /* Ajustes para que cubra toda la pestaña */
+    top: 0; /* Empezamos desde arriba */
+    left: 0; /* Desde la izquierda */
+    width: 100%; /* El 100% de la "asignatura" */
     height: 4px; /* Grosor de la línea */
     background-color: #0d47a1; /* El color de la línea, un azul muy oscuro */
-    transform-origin: center center; /* El origen de la transformación es el centro de la línea */
-    transform: rotate(-45deg) translate(-25%, -50%); /* Ajuste de rotación y desplazamiento */
+    transform-origin: top left; /* Origen de la transformación en la esquina superior izquierda */
+    transform: rotate(20deg) translateY(10%) translateX(-20%); /* Rotación y desplazamiento para cubrir */
     /* Explicación de transform:
-       - rotate(-45deg): Gira la línea 45 grados en sentido antihorario.
-         Este es un buen ángulo para cruzar una diagonal.
-       - translate(-25%, -50%): Desplaza la línea.
-         - El -50% en Y (vertical) la sigue centrando verticalmente después de la rotación.
-         - El -25% en X (horizontal) es el ajuste clave. Lo aumentamos para
-           asegurar que la línea comience más a la izquierda del borde,
-           cubriendo así el recuadro por completo hasta la derecha.
-           Puedes experimentar con valores como -20%, -30% si necesitas ajustar.
+       - rotate(20deg): Giramos la línea en sentido horario. Puedes probar 25deg, 30deg.
+         Un ángulo más pequeño suele funcionar mejor para "cubrir" de esquina a esquina
+         cuando se manipula desde top/left.
+       - translateY(10%): Desplaza la línea verticalmente un poco hacia abajo.
+       - translateX(-20%): Desplaza la línea horizontalmente hacia la izquierda
+         para asegurar que el inicio de la línea esté fuera del recuadro
+         y el final lo cubra completamente.
+         Estos valores son los que necesitarás ajustar milimétricamente.
     */
     opacity: 0.8;
 }
