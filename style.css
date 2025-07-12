@@ -57,6 +57,7 @@ h1 {
     display: flex;
     align-items: center;
     justify-content: space-between;
+    overflow: hidden; /* Muy importante para que la línea no se salga */
 }
 
 .asignatura:last-child {
@@ -82,21 +83,31 @@ h1 {
 
 /* Estilo para asignaturas completadas */
 .asignatura.completed {
-    background-color: #e8f5e9; /* Verde muy claro */
-    border-color: #66bb6a; /* Borde verde */
-    color: #2e7d32; /* Texto verde oscuro */
+    background-color: #bbdefb; /* Azul un poco más oscuro, como pediste */
+    border-color: #2196f3; /* Borde azul más intenso */
+    color: #0d47a1; /* Texto azul oscuro */
     cursor: default;
     box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    position: relative; /* Necesario para la línea ::before */
 }
 
-/* La "X" cuando una asignatura está completada */
-.asignatura.completed::after {
-    content: '✔'; /* Un checkmark es más amigable que una X */
-    font-size: 1.5em;
-    color: #2e7d32;
-    margin-left: 10px;
-    line-height: 1; /* Para alinear verticalmente */
+/* La línea diagonal */
+.asignatura.completed::before {
+    content: '';
+    position: absolute;
+    bottom: 0; /* Empieza desde abajo */
+    left: 0;
+    width: 100%;
+    height: 3px; /* Grosor de la línea */
+    background-color: #0d47a1; /* El color de la línea, un azul muy oscuro */
+    transform-origin: bottom left; /* Punto de origen para la rotación */
+    transform: rotate(-25deg) translateX(-20%); /* Rotación y ajuste de posición */
+    /* Ajusta el grado de rotación (-25deg) y el translateX (-20%)
+       para que la línea cruce el recuadro como desees.
+       Experimenta con estos valores. */
+    opacity: 0.8;
 }
+
 
 /* Media Queries para pantallas más pequeñas */
 @media (max-width: 768px) {
