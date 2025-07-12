@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Malla Curricular Interactiva: Biología Marina UdeC</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h1>Malla Curricular: Biología Marina - Universidad de Concepción</h1>
+
+    <div id="malla-curricular">
+        <div class="semestre">
+            <h2>Semestre 1</h2>
+            <div class="asignatura" id="matematica1" data-prerequisites="">Matemática I</div>
+            <div class="asignatura" id="biologia_general" data-prerequisites="">Biología General</div>
+            <div class="asignatura" id="comunicacion_cientifica" data-prerequisites="">Técnicas de Comunicación Científica</div>
+            <div class="asignatura" id="introduccion_ciencias_mar" data-prerequisites="">Introducción a las Ciencias del Mar</div>
+            <div class="asignatura" id="ingles1" data-prerequisites="">Inglés Comunicativo I Nivel Principiante</div>
+            <div class="asignatura" id="complementaria1" data-prerequisites="">Complementaria 1</div>
+        </div>
+
+        <div class="semestre">
+            <h2>Semestre 2</h2>
+            <div class="asignatura locked" id="matematica2" data-prerequisites="matematica1">Matemática II</div>
+            <div class="asignatura" id="biologia_marina" data-prerequisites="">Biología Marina</div>
+            <div class="asignatura" id="quimica_general1" data-prerequisites="">Química General I</div>
+            <div class="asignatura" id="introduccion_biodiversidad_marina" data-prerequisites="">Introducción a la Biodiversidad Marina</div>
+            <div class="asignatura locked" id="ingles2" data-prerequisites="ingles1">Inglés Comunicativo II Nivel Elemental</div>
+            <div class="asignatura" id="complementaria2" data-prerequisites="">Complementaria 2</div>
+        </div>
+
+        <div class="semestre">
+            <h2>Semestre 3</h2>
+            <div class="asignatura" id="computacion_programacion" data-prerequisites="">Computación y Programación Básica</div>
+            <div class="asignatura locked" id="fisica1" data-prerequisites="matematica1">Física I</div>
+            <div class="asignatura locked" id="quimica_general2" data-prerequisites="quimica_general1">Química General II</div>
+            <div class="asignatura locked" id="botanica_marina" data-prerequisites="introduccion_biodiversidad_marina">Botánica Marina</div>
+            <div class="asignatura locked" id="zoologia_marina" data-prerequisites="introduccion_biodiversidad_marina">Zoología Marina</div>
+            <div class="asignatura" id="complementaria3" data-prerequisites="">Complementaria 3</div>
+        </div>
+
+        <div class="semestre">
+            <h2>Semestre 4</h2>
+            <div class="asignatura locked" id="bioestadistica1" data-prerequisites="matematica2">Bioestadística I</div>
+            <div class="asignatura locked" id="fisica2" data-prerequisites="fisica1">Física II</div>
+            <div class="asignatura locked" id="quimica_organica" data-prerequisites="quimica_general2">Química Orgánica Básica</div>
+            <div class="asignatura locked" id="biologia_recursos" data-prerequisites="botanica_marina,zoologia_marina">Biología de Recursos</div>
+            <div class="asignatura locked" id="fundamentos_metodologia" data-prerequisites="biologia_marina,botanica_marina,zoologia_marina">Fundamentos y Metodología de las Ciencias</div>
+            <div class="asignatura" id="electiva1" data-prerequisites="">Electiva I</div>
+        </div>
+
+        <div class="semestre">
+            <h2>Semestre 5</h2>
+            <div class="asignatura locked" id="bioestadistica2" data-prerequisites="bioestadistica1,fundamentos_metodologia">Bioestadística II</div>
+            <div class="asignatura locked" id="oceanografia_general" data-prerequisites="introduccion_ciencias_mar,introduccion_biodiversidad_marina,fisica1,quimica_general2">Oceanografía General</div>
+            <div class="asignatura locked" id="analisis_instrumental" data-prerequisites="quimica_organica">Análisis Instrumental LICBIO</div>
+            <div class="asignatura locked" id="biologia_pesquera" data-prerequisites="biologia_recursos,bioestadistica1">Biología Pesquera</div>
+            <div class="asignatura" id="electiva2" data-prerequisites="">Electiva II</div>
+        </div>
+
+        <div class="semestre">
+            <h2>Semestre 6</h2>
+            <div class="asignatura locked" id="bioquimica" data-prerequisites="quimica_organica">Bioquímica</div>
+            <div class="asignatura locked" id="oceanografia_biologica" data-prerequisites="oceanografia_general">Oceanografía Biológica</div>
+            <div class="asignatura locked" id="ecologia_marina" data-prerequisites="bioestadistica2,botanica_marina,zoologia_marina">Ecología Marina</div>
+            <div class="asignatura locked" id="impacto_antropogenico" data-prerequisites="oceanografia_general,analisis_instrumental">Impacto Antropogénico en el Océano</div>
+            <div class="asignatura" id="electiva3" data-prerequisites="">Electiva 3</div>
+        </div>
+
+        <div class="semestre">
+            <h2>Semestre 7</h2>
+            <div class="asignatura locked" id="fisiologia_animal" data-prerequisites="zoologia_marina,bioquimica">Fisiología Animal Comparada</div>
+            <div class="asignatura locked" id="genetica_organismos_marinos" data-prerequisites="bioquimica">Genética de Organismos Marinos</div>
+            <div class="asignatura" id="legislacion_sustentabilidad" data-prerequisites="">Legislación y Sustentabilidad</div>
+            <div class="asignatura locked" id="microbiologia_marina" data-prerequisites="bioquimica">Microbiología Marina</div>
+            <div class="asignatura" id="electiva4" data-prerequisites="">Electiva 4</div>
+        </div>
+
+        <div class="semestre">
+            <h2>Semestre 8</h2>
+            <div class="asignatura locked" id="evolucion_biogeografia" data-prerequisites="genetica_organismos_marinos">Evolución y Biogeografía</div>
+            <div class="asignatura locked" id="economia_administracion" data-prerequisites="bioestadistica2">Economía, Administración y Emprendimiento</div>
+            <div class="asignatura locked" id="conservacion_marina" data-prerequisites="ecologia_marina,botanica_marina,zoologia_marina">Conservación Marina</div>
+            <div class="asignatura" id="acuicultura" data-prerequisites="">Acuicultura</div>
+            <div class="asignatura" id="electiva5" data-prerequisites="">Electiva 5</div>
+        </div>
+
+        <div class="semestre">
+            <h2>Semestre 9</h2>
+            <div class="asignatura locked" id="produccion_control_calidad" data-prerequisites="acuicultura,legislacion_sustentabilidad">Producción y Control de Calidad</div>
+            <div class="asignatura" id="taller_divulgacion" data-prerequisites="">Taller de Divulgación Científica</div>
+            <div class="asignatura" id="proyecto_seminario_titulo" data-prerequisites="">Proyecto de Seminario de Título</div>
+            <div class="asignatura" id="practica_profesional" data-prerequisites="">Práctica Profesional</div>
+            <div class="asignatura" id="electiva6" data-prerequisites="">Electiva 6</div>
+        </div>
+
+        <div class="semestre">
+            <h2>Semestre 10</h2>
+            <div class="asignatura" id="seminario_titulo" data-prerequisites="proyecto_seminario_titulo">Seminario de Título</div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
