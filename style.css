@@ -57,7 +57,7 @@ h1 {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    overflow: hidden; /* ¡Sigue siendo MUY importante para que la línea no se salga! */
+    overflow: hidden; /* ¡CLAVE para recortar la línea sobredimensionada! */
 }
 
 .asignatura:last-child {
@@ -95,24 +95,26 @@ h1 {
 .asignatura.completed::before {
     content: '';
     position: absolute;
-    /* Inicio de la línea en la esquina inferior izquierda */
-    bottom: 0;
-    left: 0;
-    width: 200%; /* Aumentamos el ancho para que sea seguro que cubre toda la diagonal */
+    /* Ajustes para asegurar que cubre de esquina a esquina */
+    bottom: 0; /* Empieza desde la parte inferior */
+    left: 0; /* Empieza desde la izquierda */
+    width: 250%; /* ¡Aumentamos aún más el ancho! Esto la hace muy larga. */
     height: 4px; /* Grosor de la línea */
     background-color: #0d47a1; /* Color azul oscuro */
-    transform-origin: bottom left; /* Punto de pivote: la esquina inferior izquierda */
-    transform: rotate(20deg) translateX(0) translateY(-15%); /* Rotación y ajuste */
+    transform-origin: bottom left; /* Punto de pivote: esquina inferior izquierda */
+    transform: rotate(20deg) translateY(-8px); /* Rotación y ajuste fino */
     /* Explicación de transform:
-       - rotate(20deg): Gira la línea 20 grados en sentido horario.
-         Esto hará que la línea suba hacia la derecha.
-       - translateX(0): No hay desplazamiento horizontal inicial.
-       - translateY(-15%): Desplaza la línea verticalmente *hacia arriba*
-         desde el borde inferior. Ajusta este porcentaje (-10% a -20%)
-         si la línea no se alinea perfectamente con la esquina inferior izquierda.
-         Este valor compensa la rotación y el origen.
+       - rotate(20deg): El ángulo de 20 grados. Un ángulo positivo hace que la línea
+         suba de izquierda a derecha cuando el origen es "bottom left".
+       - translateY(-8px): Este es el ajuste de pixel crucial. Mueve la línea 8px
+         hacia arriba desde su posición inicial en la parte inferior. Puedes probar -5px,
+         -10px, -12px, etc., si la línea no está perfectamente alineada con la esquina
+         inferior izquierda.
+         Al tener un 'width' tan grande, no necesitamos 'translateX' porque la línea
+         ya se extiende mucho más allá del ancho del recuadro.
     */
     opacity: 0.8;
+    z-index: 1; /* Asegura que la línea esté por encima del texto si hubiera superposiciones */
 }
 
 
