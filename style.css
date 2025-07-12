@@ -1,3 +1,4 @@
+
 body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     margin: 20px;
@@ -91,24 +92,27 @@ h1 {
     position: relative; /* Necesario para la línea ::before */
 }
 
-/* La línea diagonal que cruza toda la pestaña de 20 grados */
+/* La línea diagonal que cruza toda la pestaña de 20 grados, de abajo izquierda a arriba derecha */
 .asignatura.completed::before {
     content: '';
     position: absolute;
-    /* Para que la línea vaya de abajo izquierda a arriba derecha */
-    bottom: 0; /* Empieza desde la parte inferior del recuadro */
-    left: 0; /* Empieza desde la izquierda del recuadro */
-    width: 150%; /* Más que el 100% para asegurar que cubra toda la diagonal */
+    /* Inicio de la línea en la esquina inferior izquierda */
+    bottom: 0;
+    left: 0;
+    width: 150%; /* Suficientemente largo para cubrir la diagonal */
     height: 4px; /* Grosor de la línea */
-    background-color: #0d47a1; /* El color de la línea, un azul muy oscuro */
-    transform-origin: bottom left; /* Origen de la rotación: esquina inferior izquierda */
-    transform: rotate(20deg) translateX(0%) translateY(-10%); /* Rotación y ajuste */
+    background-color: #0d47a1; /* Color azul oscuro */
+    transform-origin: bottom left; /* Punto de pivote: la esquina inferior izquierda */
+    transform: rotate(20deg) translateX(0) translateY(0); /* Rotación y ajuste */
     /* Explicación de transform:
        - rotate(20deg): Gira la línea 20 grados en sentido horario.
-       - translateX(0%): Se mantiene en su posición horizontal inicial.
-       - translateY(-10%): Desplaza la línea ligeramente hacia arriba desde el borde inferior
-         para que el punto de inicio inferior izquierdo se ajuste correctamente después de la rotación.
-         Es posible que necesites ajustar este valor (-5% a -15%) dependiendo de la altura del recuadro.
+         Al pivotar desde "bottom left", esto hará que la línea suba hacia la derecha.
+       - translateX(0): No hay desplazamiento horizontal inicial.
+       - translateY(0): No hay desplazamiento vertical inicial.
+         Con `bottom: 0` y `left: 0` y `transform-origin: bottom left`,
+         la línea debería pivotar directamente desde la esquina sin necesidad de `translate` iniciales.
+         Si la línea no cruza completamente, podríamos necesitar un ligero `translateX` o `translateY`
+         (ej. `translateX(-5%)` o `translateY(-5%)` para moverla ligeramente).
     */
     opacity: 0.8;
 }
