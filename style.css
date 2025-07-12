@@ -57,7 +57,7 @@ h1 {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    overflow: hidden; /* ¡CLAVE para recortar la línea! */
+    /* Remover overflow: hidden; ya no es necesario si no hay pseudo-elementos fuera */
 }
 
 .asignatura:last-child {
@@ -83,33 +83,17 @@ h1 {
 
 /* Estilo para asignaturas completadas */
 .asignatura.completed {
-    background-color: #bbdefb; /* Azul un poco más oscuro */
+    background-color: #bbdefb; /* Azul un poco más oscuro, como pediste */
     border-color: #2196f3; /* Borde azul más intenso */
     color: #0d47a1; /* Texto azul oscuro */
     cursor: default;
     box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-    position: relative; /* Necesario para la línea ::before */
+    /* **Ajuste clave aquí:** */
+    text-decoration: line-through; /* Esto tacha el texto */
+    /* text-decoration-color: #0d47a1; (Opcional: si quieres el color del tachado diferente) */
 }
 
-/* La línea diagonal que cruza toda la pestaña de 20 grados, de abajo izquierda a arriba derecha */
-.asignatura.completed::before {
-    content: '';
-    position: absolute;
-    /* Iniciar desde la esquina inferior izquierda del *padre* (.asignatura) */
-    bottom: 0;
-    left: 0;
-    width: 300%; /* ¡Mucho más ancho para garantizar que cubra la diagonal! */
-    height: 4px; /* Grosor de la línea */
-    background-color: #0d47a1; /* Color azul oscuro */
-    transform-origin: bottom left; /* Punto de pivote: esquina inferior izquierda */
-    /* Rotación y desplazamiento. El translateY empuja la línea hacia arriba desde el 'bottom: 0' */
-    transform: rotate(20deg) translateY(-8px); /* Ajusta este -8px si no empieza perfecto en la esquina */
-    /* Opcional: si 20deg no cubre bien, prueba con 25deg y ajusta el translateY */
-    /* transform: rotate(25deg) translateY(-10px); */
-
-    opacity: 0.8;
-    z-index: 1; /* Asegura que la línea esté por encima del texto */
-}
+/* Eliminamos completamente la regla .asignatura.completed::before ya que no usaremos la línea */
 
 
 /* Media Queries para pantallas más pequeñas */
