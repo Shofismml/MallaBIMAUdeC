@@ -57,7 +57,7 @@ h1 {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    overflow: hidden; /* ¡CLAVE para recortar la línea sobredimensionada! */
+    overflow: hidden; /* ¡CLAVE para recortar la línea! */
 }
 
 .asignatura:last-child {
@@ -95,26 +95,20 @@ h1 {
 .asignatura.completed::before {
     content: '';
     position: absolute;
-    /* Ajustes para asegurar que cubre de esquina a esquina */
-    bottom: 0; /* Empieza desde la parte inferior */
-    left: 0; /* Empieza desde la izquierda */
-    width: 250%; /* ¡Aumentamos aún más el ancho! Esto la hace muy larga. */
+    /* Iniciar desde la esquina inferior izquierda del *padre* (.asignatura) */
+    bottom: 0;
+    left: 0;
+    width: 300%; /* ¡Mucho más ancho para garantizar que cubra la diagonal! */
     height: 4px; /* Grosor de la línea */
     background-color: #0d47a1; /* Color azul oscuro */
     transform-origin: bottom left; /* Punto de pivote: esquina inferior izquierda */
-    transform: rotate(20deg) translateY(-8px); /* Rotación y ajuste fino */
-    /* Explicación de transform:
-       - rotate(20deg): El ángulo de 20 grados. Un ángulo positivo hace que la línea
-         suba de izquierda a derecha cuando el origen es "bottom left".
-       - translateY(-8px): Este es el ajuste de pixel crucial. Mueve la línea 8px
-         hacia arriba desde su posición inicial en la parte inferior. Puedes probar -5px,
-         -10px, -12px, etc., si la línea no está perfectamente alineada con la esquina
-         inferior izquierda.
-         Al tener un 'width' tan grande, no necesitamos 'translateX' porque la línea
-         ya se extiende mucho más allá del ancho del recuadro.
-    */
+    /* Rotación y desplazamiento. El translateY empuja la línea hacia arriba desde el 'bottom: 0' */
+    transform: rotate(20deg) translateY(-8px); /* Ajusta este -8px si no empieza perfecto en la esquina */
+    /* Opcional: si 20deg no cubre bien, prueba con 25deg y ajusta el translateY */
+    /* transform: rotate(25deg) translateY(-10px); */
+
     opacity: 0.8;
-    z-index: 1; /* Asegura que la línea esté por encima del texto si hubiera superposiciones */
+    z-index: 1; /* Asegura que la línea esté por encima del texto */
 }
 
 
