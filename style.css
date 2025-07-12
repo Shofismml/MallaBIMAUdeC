@@ -91,27 +91,24 @@ h1 {
     position: relative; /* Necesario para la línea ::before */
 }
 
-/* La línea diagonal que cruza todo el recuadro */
+/* La línea diagonal que cruza toda la pestaña de 20 grados */
 .asignatura.completed::before {
     content: '';
     position: absolute;
-    /* Ajustes para que cubra toda la pestaña */
-    top: 0; /* Empezamos desde arriba */
-    left: 0; /* Desde la izquierda */
-    width: 100%; /* El 100% de la "asignatura" */
+    /* Para que la línea vaya de abajo izquierda a arriba derecha */
+    bottom: 0; /* Empieza desde la parte inferior del recuadro */
+    left: 0; /* Empieza desde la izquierda del recuadro */
+    width: 150%; /* Más que el 100% para asegurar que cubra toda la diagonal */
     height: 4px; /* Grosor de la línea */
     background-color: #0d47a1; /* El color de la línea, un azul muy oscuro */
-    transform-origin: top left; /* Origen de la transformación en la esquina superior izquierda */
-    transform: rotate(20deg) translateY(10%) translateX(-20%); /* Rotación y desplazamiento para cubrir */
+    transform-origin: bottom left; /* Origen de la rotación: esquina inferior izquierda */
+    transform: rotate(20deg) translateX(0%) translateY(-10%); /* Rotación y ajuste */
     /* Explicación de transform:
-       - rotate(20deg): Giramos la línea en sentido horario. Puedes probar 25deg, 30deg.
-         Un ángulo más pequeño suele funcionar mejor para "cubrir" de esquina a esquina
-         cuando se manipula desde top/left.
-       - translateY(10%): Desplaza la línea verticalmente un poco hacia abajo.
-       - translateX(-20%): Desplaza la línea horizontalmente hacia la izquierda
-         para asegurar que el inicio de la línea esté fuera del recuadro
-         y el final lo cubra completamente.
-         Estos valores son los que necesitarás ajustar milimétricamente.
+       - rotate(20deg): Gira la línea 20 grados en sentido horario.
+       - translateX(0%): Se mantiene en su posición horizontal inicial.
+       - translateY(-10%): Desplaza la línea ligeramente hacia arriba desde el borde inferior
+         para que el punto de inicio inferior izquierdo se ajuste correctamente después de la rotación.
+         Es posible que necesites ajustar este valor (-5% a -15%) dependiendo de la altura del recuadro.
     */
     opacity: 0.8;
 }
