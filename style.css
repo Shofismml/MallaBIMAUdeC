@@ -1,0 +1,111 @@
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 20px;
+    background-color: #e0f2f7; /* Un azul claro */
+    color: #333;
+    line-height: 1.6;
+}
+
+h1 {
+    color: #0056b3; /* Azul más oscuro */
+    text-align: center;
+    margin-bottom: 30px;
+    font-size: 2.2em;
+}
+
+#malla-curricular {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 25px; /* Espacio entre semestres */
+    justify-content: center; /* Centra los semestres */
+}
+
+.semestre {
+    background-color: #ffffff;
+    border: 1px solid #b3e5fc; /* Borde azul claro */
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1); /* Sombra suave */
+    flex: 1; /* Permite que los semestres se expandan */
+    min-width: 280px; /* Ancho mínimo para buena legibilidad */
+    max-width: 350px; /* Ancho máximo para evitar que sean muy anchos */
+    display: flex;
+    flex-direction: column;
+}
+
+.semestre h2 {
+    margin-top: 0;
+    font-size: 1.4em;
+    color: #0288d1; /* Azul intermedio */
+    border-bottom: 2px solid #e1f5fe;
+    padding-bottom: 10px;
+    margin-bottom: 15px;
+    text-align: center;
+}
+
+.asignatura {
+    background-color: #e3f2fd; /* Azul muy claro */
+    border: 1px solid #90caf9; /* Borde azul suave */
+    padding: 12px 15px;
+    margin-bottom: 10px;
+    border-radius: 7px;
+    cursor: pointer;
+    position: relative;
+    transition: all 0.3s ease-in-out; /* Transiciones suaves */
+    font-weight: 500;
+    color: #1976d2; /* Texto azul */
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.asignatura:last-child {
+    margin-bottom: 0; /* No margin-bottom en el último elemento de la lista */
+}
+
+.asignatura:hover:not(.locked):not(.completed) {
+    background-color: #bbdefb; /* Azul un poco más oscuro al pasar el mouse */
+    transform: translateY(-2px); /* Pequeño efecto de elevación */
+    box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+}
+
+/* Estilo para asignaturas bloqueadas */
+.asignatura.locked {
+    background-color: #f5f5f5; /* Gris claro */
+    border-color: #e0e0e0; /* Borde gris */
+    color: #bdbdbd; /* Texto gris */
+    cursor: not-allowed;
+    opacity: 0.7; /* Menos opaco para que se note que está bloqueado */
+    box-shadow: none;
+    transform: none;
+}
+
+/* Estilo para asignaturas completadas */
+.asignatura.completed {
+    background-color: #e8f5e9; /* Verde muy claro */
+    border-color: #66bb6a; /* Borde verde */
+    color: #2e7d32; /* Texto verde oscuro */
+    cursor: default;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+/* La "X" cuando una asignatura está completada */
+.asignatura.completed::after {
+    content: '✔'; /* Un checkmark es más amigable que una X */
+    font-size: 1.5em;
+    color: #2e7d32;
+    margin-left: 10px;
+    line-height: 1; /* Para alinear verticalmente */
+}
+
+/* Media Queries para pantallas más pequeñas */
+@media (max-width: 768px) {
+    #malla-curricular {
+        flex-direction: column;
+        align-items: center;
+    }
+    .semestre {
+        min-width: 90%;
+        max-width: 90%;
+    }
+}
