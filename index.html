@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Malla Biología Marina UdeC - Interactiva</title>
-    <link rel="stylesheet" href="style.css?v=202507121830">
+    <link rel="stylesheet" href="style.css?v=202507121900">
 </head>
 <body>
     <h1>Malla Curricular: Biología Marina - UdeC</h1>
@@ -14,27 +14,27 @@
         <div class="semestre">
             <h2>Semestre 1</h2>
             <div class="asignatura" id="matematica1" data-prerequisites="" data-creditos="4">
-                Matemática I
+                <span class="nombre-ramo">Matemática I</span>
                 <input type="number" class="nota-input" min="1.0" max="7.0" step="0.1" placeholder="Nota">
             </div>
             <div class="asignatura" id="biologia_general" data-prerequisites="" data-creditos="4">
-                Biología General
+                <span class="nombre-ramo">Biología General</span>
                 <input type="number" class="nota-input" min="1.0" max="7.0" step="0.1" placeholder="Nota">
             </div>
             <div class="asignatura" id="comunicacion_cientifica" data-prerequisites="" data-creditos="3">
-                Técnicas de Com. Científica
+                <span class="nombre-ramo">Técnicas de Com. Científica</span>
                 <input type="number" class="nota-input" min="1.0" max="7.0" step="0.1" placeholder="Nota">
             </div>
             <div class="asignatura" id="intro_ciencias_mar" data-prerequisites="" data-creditos="3">
-                Intro. a las Ciencias del Mar
+                <span class="nombre-ramo">Intro. a las Ciencias del Mar</span>
                 <input type="number" class="nota-input" min="1.0" max="7.0" step="0.1" placeholder="Nota">
             </div>
             <div class="asignatura" id="ingles1" data-prerequisites="" data-creditos="3">
-                Inglés Comunicativo I
+                <span class="nombre-ramo">Inglés Comunicativo I</span>
                 <input type="number" class="nota-input" min="1.0" max="7.0" step="0.1" placeholder="Nota">
             </div>
             <div class="asignatura" id="complementaria1" data-prerequisites="" data-creditos="2">
-                Complementaria 1
+                <span class="nombre-ramo">Complementaria 1</span>
                 <input type="number" class="nota-input" min="1.0" max="7.0" step="0.1" placeholder="Nota">
             </div>
         </div>
@@ -42,27 +42,27 @@
         <div class="semestre">
             <h2>Semestre 2</h2>
             <div class="asignatura locked" id="matematica2" data-prerequisites="matematica1" data-creditos="4">
-                Matemática II
+                <span class="nombre-ramo">Matemática II</span>
                 <input type="number" class="nota-input" min="1.0" max="7.0" step="0.1" placeholder="Nota">
             </div>
             <div class="asignatura" id="biologia_marina" data-prerequisites="" data-creditos="4">
-                Biología Marina
+                <span class="nombre-ramo">Biología Marina</span>
                 <input type="number" class="nota-input" min="1.0" max="7.0" step="0.1" placeholder="Nota">
             </div>
             <div class="asignatura" id="quimica_general1" data-prerequisites="" data-creditos="5">
-                Química General I
+                <span class="nombre-ramo">Química General I</span>
                 <input type="number" class="nota-input" min="1.0" max="7.0" step="0.1" placeholder="Nota">
             </div>
             <div class="asignatura" id="intro_biodiversidad" data-prerequisites="" data-creditos="4">
-                Intro. Biodiversidad Marina
+                <span class="nombre-ramo">Intro. Biodiversidad Marina</span>
                 <input type="number" class="nota-input" min="1.0" max="7.0" step="0.1" placeholder="Nota">
             </div>
             <div class="asignatura locked" id="ingles2" data-prerequisites="ingles1" data-creditos="3">
-                Inglés Comunicativo II
+                <span class="nombre-ramo">Inglés Comunicativo II</span>
                 <input type="number" class="nota-input" min="1.0" max="7.0" step="0.1" placeholder="Nota">
             </div>
             <div class="asignatura" id="complementaria2" data-prerequisites="" data-creditos="2">
-                Complementaria 2
+                <span class="nombre-ramo">Complementaria 2</span>
                 <input type="number" class="nota-input" min="1.0" max="7.0" step="0.1" placeholder="Nota">
             </div>
         </div>
@@ -70,27 +70,27 @@
         <div class="semestre">
             <h2>Semestre 3</h2>
             <div class="asignatura" id="computacion" data-prerequisites="" data-creditos="3">
-                Comp. y Programación Básica
+                <span class="nombre-ramo">Comp. y Programación Básica</span>
                 <input type="number" class="nota-input" min="1.0" max="7.0" step="0.1" placeholder="Nota">
             </div>
             <div class="asignatura locked" id="fisica1" data-prerequisites="matematica1" data-creditos="4">
-                Física I
+                <span class="nombre-ramo">Física I</span>
                 <input type="number" class="nota-input" min="1.0" max="7.0" step="0.1" placeholder="Nota">
             </div>
             <div class="asignatura locked" id="quimica_general2" data-prerequisites="quimica_general1" data-creditos="5">
-                Química General II
+                <span class="nombre-ramo">Química General II</span>
                 <input type="number" class="nota-input" min="1.0" max="7.0" step="0.1" placeholder="Nota">
             </div>
             <div class="asignatura locked" id="botanica_marina" data-prerequisites="intro_biodiversidad" data-creditos="4">
-                Botánica Marina
+                <span class="nombre-ramo">Botánica Marina</span>
                 <input type="number" class="nota-input" min="1.0" max="7.0" step="0.1" placeholder="Nota">
             </div>
             <div class="asignatura locked" id="zoologia_marina" data-prerequisites="intro_biodiversidad" data-creditos="5">
-                Zoología Marina
+                <span class="nombre-ramo">Zoología Marina</span>
                 <input type="number" class="nota-input" min="1.0" max="7.0" step="0.1" placeholder="Nota">
             </div>
             <div class="asignatura" id="complementaria3" data-prerequisites="" data-creditos="2">
-                Complementaria 3
+                <span class="nombre-ramo">Complementaria 3</span>
                 <input type="number" class="nota-input" min="1.0" max="7.0" step="0.1" placeholder="Nota">
             </div>
         </div>
@@ -98,31 +98,31 @@
         <div class="semestre">
             <h2>Semestre 4</h2>
             <div class="asignatura locked" id="bioestadistica1" data-prerequisites="matematica2" data-creditos="4">
-                Bioestadística I
+                <span class="nombre-ramo">Bioestadística I</span>
                 <input type="number" class="nota-input" min="1.0" max="7.0" step="0.1" placeholder="Nota">
             </div>
             <div class="asignatura locked" id="fisica2" data-prerequisites="fisica1" data-creditos="4">
-                Física II
+                <span class="nombre-ramo">Física II</span>
                 <input type="number" class="nota-input" min="1.0" max="7.0" step="0.1" placeholder="Nota">
             </div>
             <div class="asignatura locked" id="quimica_organica" data-prerequisites="quimica_general2" data-creditos="4">
-                Química Orgánica Básica
+                <span class="nombre-ramo">Química Orgánica Básica</span>
                 <input type="number" class="nota-input" min="1.0" max="7.0" step="0.1" placeholder="Nota">
             </div>
             <div class="asignatura locked" id="biologia_recursos" data-prerequisites="botanica_marina,zoologia_marina" data-creditos="4">
-                Biología de Recursos
+                <span class="nombre-ramo">Biología de Recursos</span>
                 <input type="number" class="nota-input" min="1.0" max="7.0" step="0.1" placeholder="Nota">
             </div>
             <div class="asignatura locked" id="fundamentos_metodologia" data-prerequisites="biologia_marina,botanica_marina,zoologia_marina" data-creditos="3">
-                Fund. y Metodología Ciencias
+                <span class="nombre-ramo">Fund. y Metodología Ciencias</span>
                 <input type="number" class="nota-input" min="1.0" max="7.0" step="0.1" placeholder="Nota">
             </div>
             <div class="asignatura locked" id="ingles_basico1" data-prerequisites="ingles2" data-creditos="5">
-                Inglés Com. Básico I
+                <span class="nombre-ramo">Inglés Com. Básico I</span>
                 <input type="number" class="nota-input" min="1.0" max="7.0" step="0.1" placeholder="Nota">
             </div>
             <div class="asignatura" id="electiva1" data-prerequisites="" data-creditos="3">
-                Electiva I
+                <span class="nombre-ramo">Electiva I</span>
                 <input type="number" class="nota-input" min="1.0" max="7.0" step="0.1" placeholder="Nota">
             </div>
         </div>
@@ -130,27 +130,27 @@
         <div class="semestre">
             <h2>Semestre 5</h2>
             <div class="asignatura locked" id="bioestadistica2" data-prerequisites="bioestadistica1,fundamentos_metodologia" data-creditos="4">
-                Bioestadística II
+                <span class="nombre-ramo">Bioestadística II</span>
                 <input type="number" class="nota-input" min="1.0" max="7.0" step="0.1" placeholder="Nota">
             </div>
             <div class="asignatura locked" id="oceanografia_general" data-prerequisites="intro_ciencias_mar,intro_biodiversidad,fisica1,quimica_general2" data-creditos="4">
-                Oceanografía General
+                <span class="nombre-ramo">Oceanografía General</span>
                 <input type="number" class="nota-input" min="1.0" max="7.0" step="0.1" placeholder="Nota">
             </div>
             <div class="asignatura locked" id="analisis_instrumental" data-prerequisites="quimica_organica" data-creditos="4">
-                Análisis Instrumental LICBIO
+                <span class="nombre-ramo">Análisis Instrumental LICBIO</span>
                 <input type="number" class="nota-input" min="1.0" max="7.0" step="0.1" placeholder="Nota">
             </div>
             <div class="asignatura locked" id="biologia_pesquera" data-prerequisites="biologia_recursos,bioestadistica1" data-creditos="4">
-                Biología Pesquera
+                <span class="nombre-ramo">Biología Pesquera</span>
                 <input type="number" class="nota-input" min="1.0" max="7.0" step="0.1" placeholder="Nota">
             </div>
             <div class="asignatura locked" id="ingles_basico2" data-prerequisites="ingles_basico1" data-creditos="5">
-                Inglés Com. Básico II
+                <span class="nombre-ramo">Inglés Com. Básico II</span>
                 <input type="number" class="nota-input" min="1.0" max="7.0" step="0.1" placeholder="Nota">
             </div>
             <div class="asignatura" id="electiva2" data-prerequisites="" data-creditos="3">
-                Electiva II
+                <span class="nombre-ramo">Electiva II</span>
                 <input type="number" class="nota-input" min="1.0" max="7.0" step="0.1" placeholder="Nota">
             </div>
         </div>
@@ -158,27 +158,27 @@
         <div class="semestre">
             <h2>Semestre 6</h2>
             <div class="asignatura locked" id="bioquimica" data-prerequisites="quimica_organica" data-creditos="4">
-                Bioquímica
+                <span class="nombre-ramo">Bioquímica</span>
                 <input type="number" class="nota-input" min="1.0" max="7.0" step="0.1" placeholder="Nota">
             </div>
             <div class="asignatura locked" id="oceanografia_biologica" data-prerequisites="oceanografia_general" data-creditos="4">
-                Oceanografía Biológica
+                <span class="nombre-ramo">Oceanografía Biológica</span>
                 <input type="number" class="nota-input" min="1.0" max="7.0" step="0.1" placeholder="Nota">
             </div>
             <div class="asignatura locked" id="ecologia_marina" data-prerequisites="bioestadistica2,botanica_marina,zoologia_marina" data-creditos="3">
-                Ecología Marina
+                <span class="nombre-ramo">Ecología Marina</span>
                 <input type="number" class="nota-input" min="1.0" max="7.0" step="0.1" placeholder="Nota">
             </div>
             <div class="asignatura locked" id="impacto_antropogenico" data-prerequisites="oceanografia_general,analisis_instrumental" data-creditos="4">
-                Impacto Antropogénico
+                <span class="nombre-ramo">Impacto Antropogénico</span>
                 <input type="number" class="nota-input" min="1.0" max="7.0" step="0.1" placeholder="Nota">
             </div>
             <div class="asignatura locked" id="ingles_intermedio1" data-prerequisites="ingles_basico2" data-creditos="5">
-                Inglés Com. Intermedio I
+                <span class="nombre-ramo">Inglés Com. Intermedio I</span>
                 <input type="number" class="nota-input" min="1.0" max="7.0" step="0.1" placeholder="Nota">
             </div>
             <div class="asignatura" id="electiva3" data-prerequisites="" data-creditos="3">
-                Electiva III
+                <span class="nombre-ramo">Electiva III</span>
                 <input type="number" class="nota-input" min="1.0" max="7.0" step="0.1" placeholder="Nota">
             </div>
         </div>
@@ -186,27 +186,27 @@
         <div class="semestre">
             <h2>Semestre 7</h2>
             <div class="asignatura locked" id="fisiologia_animal" data-prerequisites="zoologia_marina,bioquimica" data-creditos="4">
-                Fisiología Animal Comp.
+                <span class="nombre-ramo">Fisiología Animal Comp.</span>
                 <input type="number" class="nota-input" min="1.0" max="7.0" step="0.1" placeholder="Nota">
             </div>
             <div class="asignatura locked" id="genetica_organismos" data-prerequisites="bioquimica" data-creditos="4">
-                Genética Org. Marinos
+                <span class="nombre-ramo">Genética Org. Marinos</span>
                 <input type="number" class="nota-input" min="1.0" max="7.0" step="0.1" placeholder="Nota">
             </div>
             <div class="asignatura" id="legislacion_sustentabilidad" data-prerequisites="" data-creditos="4">
-                Legislación y Sustentabilidad
+                <span class="nombre-ramo">Legislación y Sustentabilidad</span>
                 <input type="number" class="nota-input" min="1.0" max="7.0" step="0.1" placeholder="Nota">
             </div>
             <div class="asignatura locked" id="microbiologia_marina" data-prerequisites="bioquimica" data-creditos="4">
-                Microbiología Marina
+                <span class="nombre-ramo">Microbiología Marina</span>
                 <input type="number" class="nota-input" min="1.0" max="7.0" step="0.1" placeholder="Nota">
             </div>
             <div class="asignatura locked" id="ingles_intermedio2" data-prerequisites="ingles_intermedio1" data-creditos="5">
-                Inglés Com. Intermedio II
+                <span class="nombre-ramo">Inglés Com. Intermedio II</span>
                 <input type="number" class="nota-input" min="1.0" max="7.0" step="0.1" placeholder="Nota">
             </div>
             <div class="asignatura" id="electiva4" data-prerequisites="" data-creditos="3">
-                Electiva IV
+                <span class="nombre-ramo">Electiva IV</span>
                 <input type="number" class="nota-input" min="1.0" max="7.0" step="0.1" placeholder="Nota">
             </div>
         </div>
@@ -214,27 +214,27 @@
         <div class="semestre">
             <h2>Semestre 8</h2>
             <div class="asignatura locked" id="evolucion_biogeografia" data-prerequisites="genetica_organismos" data-creditos="4">
-                Evolución y Biogeografía
+                <span class="nombre-ramo">Evolución y Biogeografía</span>
                 <input type="number" class="nota-input" min="1.0" max="7.0" step="0.1" placeholder="Nota">
             </div>
             <div class="asignatura locked" id="economia_admin" data-prerequisites="bioestadistica2" data-creditos="4">
-                Economía, Admin. y Emprend.
+                <span class="nombre-ramo">Economía, Admin. y Emprend.</span>
                 <input type="number" class="nota-input" min="1.0" max="7.0" step="0.1" placeholder="Nota">
             </div>
             <div class="asignatura locked" id="conservacion_marina" data-prerequisites="ecologia_marina,botanica_marina,zoologia_marina" data-creditos="4">
-                Conservación Marina
+                <span class="nombre-ramo">Conservación Marina</span>
                 <input type="number" class="nota-input" min="1.0" max="7.0" step="0.1" placeholder="Nota">
             </div>
             <div class="asignatura" id="acuicultura" data-prerequisites="" data-creditos="4">
-                Acuicultura
+                <span class="nombre-ramo">Acuicultura</span>
                 <input type="number" class="nota-input" min="1.0" max="7.0" step="0.1" placeholder="Nota">
             </div>
             <div class="asignatura locked" id="ingles_avanzado" data-prerequisites="ingles_intermedio2" data-creditos="5">
-                Inglés Com. Avanzado
+                <span class="nombre-ramo">Inglés Com. Avanzado</span>
                 <input type="number" class="nota-input" min="1.0" max="7.0" step="0.1" placeholder="Nota">
             </div>
             <div class="asignatura" id="electiva5" data-prerequisites="" data-creditos="3">
-                Electiva V
+                <span class="nombre-ramo">Electiva V</span>
                 <input type="number" class="nota-input" min="1.0" max="7.0" step="0.1" placeholder="Nota">
             </div>
         </div>
@@ -242,23 +242,23 @@
         <div class="semestre">
             <h2>Semestre 9</h2>
             <div class="asignatura locked" id="produccion_control" data-prerequisites="acuicultura,legislacion_sustentabilidad" data-creditos="3">
-                Prod. y Control de Calidad
+                <span class="nombre-ramo">Prod. y Control de Calidad</span>
                 <input type="number" class="nota-input" min="1.0" max="7.0" step="0.1" placeholder="Nota">
             </div>
             <div class="asignatura" id="taller_divulgacion" data-prerequisites="" data-creditos="2">
-                Taller Divulgación Científica
+                <span class="nombre-ramo">Taller Divulgación Científica</span>
                 <input type="number" class="nota-input" min="1.0" max="7.0" step="0.1" placeholder="Nota">
             </div>
             <div class="asignatura" id="proyecto_seminario" data-prerequisites="" data-creditos="2">
-                Proyecto Seminario Título
+                <span class="nombre-ramo">Proyecto Seminario Título</span>
                 <input type="number" class="nota-input" min="1.0" max="7.0" step="0.1" placeholder="Nota">
             </div>
             <div class="asignatura" id="practica_profesional" data-prerequisites="" data-creditos="4">
-                Práctica Profesional
+                <span class="nombre-ramo">Práctica Profesional</span>
                 <input type="number" class="nota-input" min="1.0" max="7.0" step="0.1" placeholder="Nota">
             </div>
             <div class="asignatura" id="electiva6" data-prerequisites="" data-creditos="3">
-                Electiva VI
+                <span class="nombre-ramo">Electiva VI</span>
                 <input type="number" class="nota-input" min="1.0" max="7.0" step="0.1" placeholder="Nota">
             </div>
         </div>
@@ -266,7 +266,7 @@
         <div class="semestre">
             <h2>Semestre 10</h2>
             <div class="asignatura locked" id="seminario_titulo" data-prerequisites="proyecto_seminario" data-creditos="20">
-                Seminario de Título
+                <span class="nombre-ramo">Seminario de Título</span>
                 <input type="number" class="nota-input" min="1.0" max="7.0" step="0.1" placeholder="Nota">
             </div>
         </div>
