@@ -1,14 +1,14 @@
 body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     margin: 20px;
-    background-color: #e0f2f7; /* Un azul claro */
+    background-color: #e0f2f7;
     color: #333;
     line-height: 1.6;
-    padding-bottom: 80px; /* Espacio extra abajo para que el cuadro del promedio no tape nada */
+    padding-bottom: 60px; /* Espacio ajustado */
 }
 
 h1 {
-    color: #0056b3; /* Azul más oscuro */
+    color: #0056b3;
     text-align: center;
     margin-bottom: 30px;
     font-size: 2.2em;
@@ -17,24 +17,145 @@ h1 {
 #malla-curricular {
     display: flex;
     flex-wrap: wrap;
-    gap: 25px; /* Espacio entre semestres */
-    justify-content: center; /* Centra los semestres */
+    gap: 25px;
+    justify-content: center;
 }
 
 .semestre {
     background-color: #ffffff;
-    border: 1px solid #b3e5fc; /* Borde azul claro */
+    border: 1px solid #b3e5fc;
     border-radius: 10px;
     padding: 20px;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.1); /* Sombra suave */
-    flex: 1; /* Permite que los semestres se expandan */
-    min-width: 280px; /* Ancho mínimo para buena legibilidad */
-    max-width: 350px; /* Ancho máximo para evitar que sean muy anchos */
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    flex: 1;
+    min-width: 280px;
+    max-width: 350px;
     display: flex;
     flex-direction: column;
 }
 
 .semestre h2 {
+    margin-top: 0;
+    font-size: 1.4em;
+    color: #0288d1;
+    border-bottom: 2px solid #e1f5fe;
+    padding-bottom: 10px;
+    margin-bottom: 15px;
+    text-align: center;
+}
+
+.asignatura {
+    background-color: #e3f2fd;
+    border: 1px solid #90caf9;
+    padding: 10px 12px; /* Un poco más compacto */
+    margin-bottom: 10px;
+    border-radius: 7px;
+    cursor: pointer;
+    position: relative;
+    transition: all 0.3s ease-in-out;
+    font-weight: 500;
+    color: #1976d2;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-size: 0.95em;
+}
+
+.asignatura:last-child {
+    margin-bottom: 0;
+}
+
+.asignatura:hover:not(.locked):not(.completed) {
+    background-color: #bbdefb;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+}
+
+.asignatura.locked {
+    background-color: #f5f5f5;
+    border-color: #e0e0e0;
+    color: #bdbdbd;
+    cursor: not-allowed;
+    opacity: 0.7;
+    box-shadow: none;
+    transform: none;
+}
+
+.asignatura.completed {
+    background-color: #bbdefb;
+    border-color: #2196f3;
+    color: #0d47a1;
+    cursor: default;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+/* --- CORRECCIÓN DEL TACHADO --- */
+/* Solo tachamos el span que tiene la clase 'nombre-ramo' */
+.asignatura.completed .nombre-ramo {
+    text-decoration: line-through;
+    opacity: 0.8;
+}
+
+/* --- CAJA DE NOTA --- */
+.nota-input {
+    width: 45px; /* Un poco más pequeño */
+    padding: 2px;
+    margin-left: 10px;
+    border: 1px solid #2196f3;
+    border-radius: 4px;
+    display: none;
+    font-size: 0.9em;
+    text-decoration: none !important; /* Forzamos que no se tache */
+    font-weight: bold;
+    color: #333;
+    text-align: center;
+    background-color: white;
+}
+
+.asignatura.completed .nota-input {
+    display: block;
+}
+
+/* --- CAJA DEL PROMEDIO (PPA) MÁS PEQUEÑA --- */
+#promedio-box {
+    position: fixed;
+    bottom: 15px;
+    right: 15px;
+    background-color: #0056b3;
+    color: white;
+    padding: 8px 15px; /* Mucho más pequeño */
+    border-radius: 8px;
+    box-shadow: 0 3px 10px rgba(0,0,0,0.3);
+    text-align: center;
+    z-index: 1000;
+    border: 1px solid #fff;
+    min-width: 80px;
+}
+
+#promedio-box h3 {
+    margin: 0;
+    font-size: 0.75em; /* Texto "PPA" más pequeño */
+    opacity: 0.9;
+    margin-bottom: 2px;
+}
+
+#valor-promedio {
+    font-size: 1.4em; /* Número más pequeño */
+    font-weight: bold;
+    display: block;
+    line-height: 1;
+}
+
+@media (max-width: 768px) {
+    #malla-curricular {
+        flex-direction: column;
+        align-items: center;
+    }
+    .semestre {
+        min-width: 90%;
+        max-width: 90%;
+    }
+}.semestre h2 {
     margin-top: 0;
     font-size: 1.4em;
     color: #0288d1; /* Azul intermedio */
