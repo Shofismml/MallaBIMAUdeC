@@ -4,7 +4,7 @@ body {
     background-color: #e0f2f7;
     color: #333;
     line-height: 1.6;
-    padding-bottom: 60px; /* Espacio ajustado */
+    padding-bottom: 60px;
 }
 
 h1 {
@@ -47,7 +47,7 @@ h1 {
 .asignatura {
     background-color: #e3f2fd;
     border: 1px solid #90caf9;
-    padding: 10px 12px; /* Un poco más compacto */
+    padding: 10px 12px;
     margin-bottom: 10px;
     border-radius: 7px;
     cursor: pointer;
@@ -59,6 +59,9 @@ h1 {
     align-items: center;
     justify-content: space-between;
     font-size: 0.95em;
+    
+    /* IMPORTANTE: Aseguramos que el contenedor NUNCA tenga tachado */
+    text-decoration: none !important;
 }
 
 .asignatura:last-child {
@@ -87,43 +90,48 @@ h1 {
     color: #0d47a1;
     cursor: default;
     box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    /* IMPORTANTE: Quitamos el tachado del contenedor padre */
+    text-decoration: none !important;
 }
 
-/* --- CORRECCIÓN DEL TACHADO --- */
-/* Solo tachamos el span que tiene la clase 'nombre-ramo' */
+/* --- AQUÍ ESTÁ EL TRUCO DEL TACHADO --- */
+/* Solo tachamos el span específico del nombre */
 .asignatura.completed .nombre-ramo {
     text-decoration: line-through;
+    text-decoration-thickness: 1.5px; /* Línea un poco más visible */
     opacity: 0.8;
 }
 
-/* --- CAJA DE NOTA --- */
+/* --- CAJA DE NOTA (INPUT) --- */
 .nota-input {
-    width: 45px; /* Un poco más pequeño */
+    width: 45px;
     padding: 2px;
     margin-left: 10px;
     border: 1px solid #2196f3;
     border-radius: 4px;
     display: none;
     font-size: 0.9em;
-    text-decoration: none !important; /* Forzamos que no se tache */
     font-weight: bold;
     color: #333;
     text-align: center;
     background-color: white;
+    
+    /* IMPORTANTE: Forzamos a que el input NO tenga tachado */
+    text-decoration: none !important;
 }
 
 .asignatura.completed .nota-input {
     display: block;
 }
 
-/* --- CAJA DEL PROMEDIO (PPA) MÁS PEQUEÑA --- */
+/* --- CAJA DEL PROMEDIO (PPA) PEQUEÑA --- */
 #promedio-box {
     position: fixed;
     bottom: 15px;
     right: 15px;
     background-color: #0056b3;
     color: white;
-    padding: 8px 15px; /* Mucho más pequeño */
+    padding: 8px 15px;
     border-radius: 8px;
     box-shadow: 0 3px 10px rgba(0,0,0,0.3);
     text-align: center;
@@ -134,13 +142,13 @@ h1 {
 
 #promedio-box h3 {
     margin: 0;
-    font-size: 0.75em; /* Texto "PPA" más pequeño */
+    font-size: 0.75em;
     opacity: 0.9;
     margin-bottom: 2px;
 }
 
 #valor-promedio {
-    font-size: 1.4em; /* Número más pequeño */
+    font-size: 1.4em;
     font-weight: bold;
     display: block;
     line-height: 1;
@@ -154,136 +162,5 @@ h1 {
     .semestre {
         min-width: 90%;
         max-width: 90%;
-    }
-}.semestre h2 {
-    margin-top: 0;
-    font-size: 1.4em;
-    color: #0288d1; /* Azul intermedio */
-    border-bottom: 2px solid #e1f5fe;
-    padding-bottom: 10px;
-    margin-bottom: 15px;
-    text-align: center;
-}
-
-.asignatura {
-    background-color: #e3f2fd; /* Azul muy claro */
-    border: 1px solid #90caf9; /* Borde azul suave */
-    padding: 12px 15px;
-    margin-bottom: 10px;
-    border-radius: 7px;
-    cursor: pointer;
-    position: relative;
-    transition: all 0.3s ease-in-out;
-    font-weight: 500;
-    color: #1976d2; /* Texto azul */
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    font-size: 0.95em;
-}
-
-.asignatura:last-child {
-    margin-bottom: 0;
-}
-
-.asignatura:hover:not(.locked):not(.completed) {
-    background-color: #bbdefb;
-    transform: translateY(-2px);
-    box-shadow: 0 4px 8px rgba(0,0,0,0.15);
-}
-
-/* Estilo para asignaturas bloqueadas */
-.asignatura.locked {
-    background-color: #f5f5f5; /* Gris claro */
-    border-color: #e0e0e0; /* Borde gris */
-    color: #bdbdbd; /* Texto gris */
-    cursor: not-allowed;
-    opacity: 0.7;
-    box-shadow: none;
-    transform: none;
-}
-
-/* Estilo para asignaturas completadas */
-.asignatura.completed {
-    background-color: #bbdefb; /* Azul un poco más oscuro */
-    border-color: #2196f3; /* Borde azul más intenso */
-    color: #0d47a1; /* Texto azul oscuro */
-    cursor: default;
-    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-    /* TACHADO DEL TEXTO */
-    text-decoration: line-through; 
-}
-
-/* --- ESTILOS PARA LA CAJA DE NOTA --- */
-.nota-input {
-    width: 50px;
-    padding: 4px;
-    margin-left: 10px;
-    border: 1px solid #2196f3;
-    border-radius: 4px;
-    display: none; /* Oculto por defecto */
-    font-size: 0.9em;
-    text-decoration: none; /* Asegura que el número no salga tachado */
-    font-weight: bold;
-    color: #333;
-    text-align: center;
-}
-
-/* Mostrar el input solo cuando la asignatura está completada */
-.asignatura.completed .nota-input {
-    display: block;
-}
-
-/* --- ESTILOS PARA LA CAJA DEL PROMEDIO --- */
-#promedio-box {
-    position: fixed;
-    bottom: 20px;
-    right: 20px;
-    background-color: #0056b3; /* Azul oscuro UdeC */
-    color: white;
-    padding: 15px 25px;
-    border-radius: 10px;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.3);
-    text-align: center;
-    z-index: 1000;
-    border: 2px solid #fff;
-    font-family: 'Segoe UI', sans-serif;
-    min-width: 100px;
-}
-
-#promedio-box h3 {
-    margin: 0;
-    font-size: 0.9em;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-    opacity: 0.9;
-    color: white;
-    border: none;
-    margin-bottom: 5px;
-}
-
-#valor-promedio {
-    font-size: 2.2em;
-    font-weight: bold;
-    display: block;
-}
-
-/* Media Queries para móviles */
-@media (max-width: 768px) {
-    #malla-curricular {
-        flex-direction: column;
-        align-items: center;
-    }
-    .semestre {
-        min-width: 90%;
-        max-width: 90%;
-    }
-    #promedio-box {
-        bottom: 10px;
-        right: 10px;
-        padding: 10px 15px;
-    }
-    #valor-promedio {
-        font-size: 1.8em;
     }
 }
