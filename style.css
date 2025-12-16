@@ -4,6 +4,7 @@ body {
     background-color: #e0f2f7; /* Un azul claro */
     color: #333;
     line-height: 1.6;
+    padding-bottom: 80px; /* Espacio extra abajo para que el cuadro del promedio no tape nada */
 }
 
 h1 {
@@ -51,22 +52,22 @@ h1 {
     border-radius: 7px;
     cursor: pointer;
     position: relative;
-    transition: all 0.3s ease-in-out; /* Transiciones suaves */
+    transition: all 0.3s ease-in-out;
     font-weight: 500;
     color: #1976d2; /* Texto azul */
     display: flex;
     align-items: center;
     justify-content: space-between;
-    /* Remover overflow: hidden; ya no es necesario si no hay pseudo-elementos fuera */
+    font-size: 0.95em;
 }
 
 .asignatura:last-child {
-    margin-bottom: 0; /* No margin-bottom en el último elemento de la lista */
+    margin-bottom: 0;
 }
 
 .asignatura:hover:not(.locked):not(.completed) {
-    background-color: #bbdefb; /* Azul un poco más oscuro al pasar el mouse */
-    transform: translateY(-2px); /* Pequeño efecto de elevación */
+    background-color: #bbdefb;
+    transform: translateY(-2px);
     box-shadow: 0 4px 8px rgba(0,0,0,0.15);
 }
 
@@ -76,27 +77,77 @@ h1 {
     border-color: #e0e0e0; /* Borde gris */
     color: #bdbdbd; /* Texto gris */
     cursor: not-allowed;
-    opacity: 0.7; /* Menos opaco para que se note que está bloqueado */
+    opacity: 0.7;
     box-shadow: none;
     transform: none;
 }
 
 /* Estilo para asignaturas completadas */
 .asignatura.completed {
-    background-color: #bbdefb; /* Azul un poco más oscuro, como pediste */
+    background-color: #bbdefb; /* Azul un poco más oscuro */
     border-color: #2196f3; /* Borde azul más intenso */
     color: #0d47a1; /* Texto azul oscuro */
     cursor: default;
     box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-    /* **Ajuste clave aquí:** */
-    text-decoration: line-through; /* Esto tacha el texto */
-    /* text-decoration-color: #0d47a1; (Opcional: si quieres el color del tachado diferente) */
+    /* TACHADO DEL TEXTO */
+    text-decoration: line-through; 
 }
 
-/* Eliminamos completamente la regla .asignatura.completed::before ya que no usaremos la línea */
+/* --- ESTILOS PARA LA CAJA DE NOTA --- */
+.nota-input {
+    width: 50px;
+    padding: 4px;
+    margin-left: 10px;
+    border: 1px solid #2196f3;
+    border-radius: 4px;
+    display: none; /* Oculto por defecto */
+    font-size: 0.9em;
+    text-decoration: none; /* Asegura que el número no salga tachado */
+    font-weight: bold;
+    color: #333;
+    text-align: center;
+}
 
+/* Mostrar el input solo cuando la asignatura está completada */
+.asignatura.completed .nota-input {
+    display: block;
+}
 
-/* Media Queries para pantallas más pequeñas */
+/* --- ESTILOS PARA LA CAJA DEL PROMEDIO --- */
+#promedio-box {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: #0056b3; /* Azul oscuro UdeC */
+    color: white;
+    padding: 15px 25px;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+    text-align: center;
+    z-index: 1000;
+    border: 2px solid #fff;
+    font-family: 'Segoe UI', sans-serif;
+    min-width: 100px;
+}
+
+#promedio-box h3 {
+    margin: 0;
+    font-size: 0.9em;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    opacity: 0.9;
+    color: white;
+    border: none;
+    margin-bottom: 5px;
+}
+
+#valor-promedio {
+    font-size: 2.2em;
+    font-weight: bold;
+    display: block;
+}
+
+/* Media Queries para móviles */
 @media (max-width: 768px) {
     #malla-curricular {
         flex-direction: column;
@@ -105,5 +156,13 @@ h1 {
     .semestre {
         min-width: 90%;
         max-width: 90%;
+    }
+    #promedio-box {
+        bottom: 10px;
+        right: 10px;
+        padding: 10px 15px;
+    }
+    #valor-promedio {
+        font-size: 1.8em;
     }
 }
